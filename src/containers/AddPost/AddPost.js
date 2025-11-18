@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { axiosApi } from "../../AxiosApi/AxiosApi";
 import { useNavigate } from "react-router-dom";
-import './AddPost.css'
+import "./AddPost.css";
+import Toast from "../../components/Toast/Toast";
 
 function AddPost() {
   const navigate = useNavigate();
+  const [toastVisible, setToastVisible] = useState(false);
   const [postData, setPostData] = useState({
     title: "",
     description: "",
@@ -20,12 +22,18 @@ function AddPost() {
 
     try {
       await axiosApi.post("/posts.json", dataToSend);
+
+      setToastVisible(true);
+
+      setTimeout(() => {
+        setToastVisible(false);
+        navigate("/");
+      }, 1000);
+
       setPostData({
         title: "",
         description: "",
       });
-
-      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -39,23 +47,27 @@ function AddPost() {
     }));
   };
   return (
-    <form onSubmit={newPost} className="form">
-      <input
-        type="text"
-        name="title"
-        value={postData.title}
-        onChange={onChangeInput}
-        placeholder="Заголовок"
-      />
-      <input
-        type="text"
-        name="description"
-        value={postData.description}
-        onChange={onChangeInput}
-        placeholder="Описание"
-      />
-      <button type="submit">добавить пост</button>
-    </form>
+    <>
+      <form onSubmit={newPost} className="form">
+        <input
+          type="text"
+          name="title"
+          required
+          value={postData.title}
+          onChange={onChangeInput}
+          placeholder="What's on your mind?"
+        />
+        <input
+          type="text"
+          name="description"
+          value={postData.description}
+          onChange={onChangeInput}
+          placeholder="Tell us more about it..."
+        />
+        <button type="submit">Add post</button>
+      </form>
+      <Toast message="Post created successfully!" visible={toastVisible} />
+    </>
   );
 }
 

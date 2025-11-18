@@ -1,9 +1,9 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Post.css";
 import dayjs from "dayjs";
 
 function Post({ datetime, id, title }) {
-   const formattedDate = datetime
+  const formattedDate = datetime
     ? dayjs(datetime).format("DD.MM.YYYY | HH:mm")
     : "";
   return (
@@ -11,7 +11,9 @@ function Post({ datetime, id, title }) {
       <div className="post-card" key={id}>
         <p className="post-date">Created at: {formattedDate}</p>
         <p className="post-text">{title}</p>
-        <button className="post-button">Read More</button>
+        <NavLink className="post-button" to={`posts/${id}`}>
+          Read more...
+        </NavLink>
       </div>
     </>
   );
