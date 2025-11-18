@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { axiosApi } from "../../AxiosApi/AxiosApi";
 import { useNavigate } from "react-router-dom";
+import './AddPost.css'
 
 function AddPost() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function AddPost() {
     }));
   };
   return (
-    <form onSubmit={newPost}>
+    <form onSubmit={newPost} className="form">
       <input
         type="text"
         name="title"
