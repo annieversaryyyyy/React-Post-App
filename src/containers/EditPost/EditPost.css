@@ -1,5 +1,5 @@
-.formAddPost {
-  max-width: 420px;
+.formEdit {
+  max-width: 500px;
   margin: 40px auto;
   padding: 24px;
   background: #ffffff;
@@ -8,14 +8,12 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  font-family: "Oswald", sans-serif;
 }
 
-.formAddPost label {
-  margin-bottom: 6px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "Raleway", sans-serif;
+.heading {
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 30px;
 }
 
 .titleField,
@@ -44,7 +42,7 @@
   color: rgb(122, 122, 250);
 }
 
-.btnAdd {
+.btnEdit {
   padding: 14px;
   border: none;
   background: #646cff;
@@ -57,6 +55,18 @@
   font-family: "Dela Gothic One", sans-serif;
 }
 
-.form button:hover {
+.btnEdit:hover {
   background: #4d53d9;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
 }

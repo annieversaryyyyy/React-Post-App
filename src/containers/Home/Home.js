@@ -33,15 +33,14 @@ function Posts() {
     getPosts().catch((e) => console.log(e));
   }, []);
 
-  if (loading) {
-    return <Preloader />;
-  }
+  if (loading) return <Preloader />;
+
   if (!posts.length) {
-    return <p className="post-status">No posts here yet - be the first!</p>;
+    return <p className="postStatus">No posts here yet - be the first!</p>;
   }
 
   return (
-    <div className="posts-container">
+    <div className="postsContainer">
       {posts.map((post) => (
         <Post id={post.id} datetime={post.datetime} title={post.title} />
       ))}

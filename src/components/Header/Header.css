@@ -5,7 +5,9 @@
   padding: 16px 24px;
   background-color: black;
   color: #fff;
-  font-family: "Raleway", sans-serif;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .nav-logo-link {
@@ -13,11 +15,13 @@
 }
 
 .nav-logo {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: #fff;
   letter-spacing: 1px;
-  font-family: "Oswald", sans-serif; /* если используешь */
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .nav-logo:hover {

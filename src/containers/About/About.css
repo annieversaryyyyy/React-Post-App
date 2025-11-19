@@ -1,0 +1,45 @@
+.aboutContainer {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.aboutTitle,
+.aboutSubtitle {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #1b1b1b;
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+  font-family: "Raleway", sans-serif;
+}
+
+.aboutContainer ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.aboutContainer li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-family: "Raleway", sans-serif;
+}
+
+.aboutContainer code {
+  background: #f2f2f2;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 14px;
+}

@@ -8,10 +8,10 @@ function Post({ datetime, id, title }) {
     : "";
   return (
     <>
-      <div className="post-card" key={id}>
-        <p className="post-date">Created at: {formattedDate}</p>
-        <p className="post-text">{title}</p>
-        <NavLink className="post-button" to={`posts/${id}`}>
+      <div className="postCard" key={id}>
+        <p className="postDate">Created at: {formattedDate}</p>
+        <p className="postText">{title}</p>
+        <NavLink className="postButton" to={`posts/${id}`}>
           Read more...
         </NavLink>
       </div>

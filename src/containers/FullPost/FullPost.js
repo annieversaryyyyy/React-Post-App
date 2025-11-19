@@ -24,7 +24,7 @@ function FullPost() {
         };
         setPostCard(formattedPost);
       } catch (error) {
-        alert("Что-то пошло не так при поиске поста...");
+        alert("Something went wrong while fetching the post...");
       } finally {
         setLoading(false);
       }
@@ -32,7 +32,7 @@ function FullPost() {
     getFullData().catch((e) => console.log(e));
   }, [id]);
 
-  const deletPost = async () => {
+  const deletePost = async () => {
     await axiosApi.delete(`posts/${id}.json`);
     setToastVisible(true);
     setTimeout(() => {
@@ -41,23 +41,23 @@ function FullPost() {
     }, 1000);
   };
 
-  if (loading) {
-    return <Preloader />;
-  }
+  if (loading) return <Preloader />;
 
   return (
     postCard && (
       <>
         <div className="fullpost" key={postCard.id}>
-          <p className="fullpost-date">{postCard.datetime}</p>
-          <h1 className="fullpost-title">{postCard.title}</h1>
-          <p className="fullpost-text">{postCard.description}</p>
+          <p className="fullpostDate">{postCard.datetime}</p>
+          <h1 className="fullpostTitle">{postCard.title}</h1>
+          <p className="fullpostText">{postCard.description}</p>
 
-          <div className="fullpost-actions">
-            <button className="fullpost-delete" onClick={deletPost}>
+          <div className="fullpostActions">
+            <button className="fullpostDelete" onClick={deletePost}>
               Delete
             </button>
-            <NavLink className="fullpost-edit">Edit</NavLink>
+            <NavLink className="fullpostEdit" to={`/posts/${id}/edit`}>
+              Edit
+            </NavLink>
           </div>
         </div>
         <Toast message="Post deleted successfully!" visible={toastVisible} />

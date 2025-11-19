@@ -1,5 +1,5 @@
 /* HTML: <div class="loader"></div> */
-.preloader-wrapper {
+.preloaderWrapper {
   display: flex;
   justify-content: center;
   align-items: center;

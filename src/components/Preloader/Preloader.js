@@ -2,7 +2,7 @@ import './Preloader.css'
 
 function Preloader() {
   return (
-      <div className="preloader-wrapper" >
+      <div className="preloaderWrapper" >
         <div className='loader'/>
     </div>
   );
