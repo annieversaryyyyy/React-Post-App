@@ -3,10 +3,13 @@ import { axiosApi } from "../../AxiosApi/AxiosApi";
 import "./Home.css";
 import Post from "../../components/Post/Post";
 import Preloader from "../../components/Preloader/Preloader";
+import Pagination from "../../components/Pagination/Pagination";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -39,12 +42,34 @@ function Posts() {
     return <p className="postStatus">No posts here yet - be the first!</p>;
   }
 
+  const lastIndex = currentPage * postsPerPage;
+  const firstIndex = lastIndex - postsPerPage;
+  const currentPost = posts.slice(firstIndex, lastIndex);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
-    <div className="postsContainer">
-      {posts.map((post) => (
-        <Post id={post.id} datetime={post.datetime} title={post.title} />
-      ))}
-    </div>
+    <>
+      <div className="pageWrapper">
+        <div className="postsContainer">
+          {currentPost.map((post) => (
+            <Post
+              key={post.id}
+              id={post.id}
+              datetime={post.datetime}
+              title={post.title}
+            />
+          ))}
+        </div>
+
+        <Pagination
+          postsPerPage={postsPerPage}
+          posts={posts.length}
+          currentPage={currentPage}
+          paginate={paginate}
+        />
+      </div>
+    </>
   );
 }
 

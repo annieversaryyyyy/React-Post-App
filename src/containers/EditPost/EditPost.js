@@ -82,7 +82,6 @@ function EditPost() {
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
-            required
             className="descrField"
             name="description"
             value={postCard.description}
