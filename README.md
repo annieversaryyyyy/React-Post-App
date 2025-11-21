@@ -12,7 +12,8 @@ The project demonstrates clean architecture, controlled form inputs, routing, er
 - Delete posts  
 - Automatic ID generation using `crypto.randomUUID()`  
 - Timestamp added to each post on creation  
-- Toast notifications for creating, editing, and deleting posts  
+- Toast notifications for creating, editing, and deleting posts
+- Pagination for navigating pages of posts
 - Error handling for failed API requests 
 - **Tech Stack:** React, React Router, Firebase Realtime Database, Axios
 
