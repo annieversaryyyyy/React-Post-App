@@ -21,6 +21,7 @@ function AddPost() {
       id: crypto.randomUUID(),
       datetime: new Date().toISOString(),
     };
+    setLoading(true);
     try {
       await axiosApi.post("/posts.json", dataToSend);
       setToastVisible(true);
