@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Header.css";
 function Header() {
   return (
@@ -6,7 +6,7 @@ function Header() {
       <a href="/" className="nav-logo-link">
         <div className="nav-logo">My blog</div>
       </a>
-      <nav className="nav__menu">
+      <nav className="nav-menu">
         <a className="nav-link" href="/">
           Home
         </a>

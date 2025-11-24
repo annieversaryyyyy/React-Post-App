@@ -12,15 +12,14 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" exact element={<Posts />} />
+        <Route path="/" element={<Posts />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:id" element={<FullPost />} />
         <Route path="/posts/:id/edit" element={<EditPost />} />
         <Route path="/add" element={<AddPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
-
-        <Route render={() => <h1>Not found</h1>} />
+        <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
     </BrowserRouter>
   );

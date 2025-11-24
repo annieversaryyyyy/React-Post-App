@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { axiosApi } from "../../AxiosApi/AxiosApi";
 import { useState, useEffect } from "react";
 import Preloader from "../../components/Preloader/Preloader";
 import "./EditPost.css";
 import Toast from "../../components/Toast/Toast";
+import { axiosApi } from "../../AxiosApi/AxiosApi";
 
 function EditPost() {
   const { id } = useParams();
